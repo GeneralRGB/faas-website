@@ -1,6 +1,14 @@
 import { motion } from "motion/react";
 import { Link } from "react-router";
-import { Calendar, Trophy, Users, Award, ArrowRight, Star, Newspaper } from "lucide-react";
+import {
+  Calendar,
+  Trophy,
+  Users,
+  Award,
+  ArrowRight,
+  Star,
+  Newspaper,
+} from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 export function Home() {
@@ -11,7 +19,8 @@ export function Home() {
       date: "15-17 июня 2026",
       location: "Москва, Россия",
       disciplines: ["Пол-спорт", "Воздушное кольцо", "Воздушные полотна"],
-      image: "https://images.unsplash.com/photo-1773459516717-c772070071c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      image:
+        "https://images.unsplash.com/photo-1773459516717-c772070071c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
       registrationOpen: true,
     },
     {
@@ -20,7 +29,8 @@ export function Home() {
       date: "20-22 июля 2026",
       location: "Санкт-Петербург, Россия",
       disciplines: ["Воздушное кольцо", "Воздушные полотна"],
-      image: "https://images.unsplash.com/photo-1763208253756-eb536cc28c43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      image:
+        "https://images.unsplash.com/photo-1763208253756-eb536cc28c43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
       registrationOpen: true,
     },
     {
@@ -29,7 +39,8 @@ export function Home() {
       date: "10-12 августа 2026",
       location: "Казань, Россия",
       disciplines: ["Пол-спорт"],
-      image: "https://images.unsplash.com/photo-1775757418839-211ada84a421?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      image:
+        "https://images.unsplash.com/photo-1775757418839-211ada84a421?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
       registrationOpen: false,
     },
   ];
@@ -39,29 +50,37 @@ export function Home() {
       id: 1,
       title: "Открыта регистрация на Национальный Чемпионат 2026",
       date: "1 мая 2026",
-      excerpt: "Рады объявить о старте регистрации на главное событие года! Ждём спортсменов из всех регионов страны.",
-      image: "https://images.unsplash.com/photo-1773459516717-c772070071c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
+      excerpt:
+        "Рады объявить о старте регистрации на главное событие года! Ждём спортсменов из всех регионов страны.",
+      image:
+        "https://images.unsplash.com/photo-1773459516717-c772070071c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
     },
     {
       id: 2,
       title: "Новые правила судейства на 2026 год",
       date: "25 апреля 2026",
-      excerpt: "Обновлённая система оценки учитывает как технические элементы, так и артистическую составляющую выступления.",
-      image: "https://images.unsplash.com/photo-1763208253756-eb536cc28c43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
+      excerpt:
+        "Обновлённая система оценки учитывает как технические элементы, так и артистическую составляющую выступления.",
+      image:
+        "https://images.unsplash.com/photo-1763208253756-eb536cc28c43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
     },
     {
       id: 3,
       title: "Итоги Весеннего Первенства 2026",
       date: "18 апреля 2026",
-      excerpt: "120 спортсменов приняли участие в соревнованиях. Поздравляем всех победителей и участников!",
-      image: "https://images.unsplash.com/photo-1759694430835-ef9350656e7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
+      excerpt:
+        "120 спортсменов приняли участие в соревнованиях. Поздравляем всех победителей и участников!",
+      image:
+        "https://images.unsplash.com/photo-1759694430835-ef9350656e7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
     },
     {
       id: 4,
       title: "Мастер-классы от чемпионов",
       date: "10 апреля 2026",
-      excerpt: "Приглашаем на серию обучающих мастер-классов от ведущих спортсменов федерации.",
-      image: "https://images.unsplash.com/photo-1759694625703-2dc01a50b9d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
+      excerpt:
+        "Приглашаем на серию обучающих мастер-классов от ведущих спортсменов федерации.",
+      image:
+        "https://images.unsplash.com/photo-1759694625703-2dc01a50b9d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
     },
   ];
 
@@ -69,25 +88,29 @@ export function Home() {
     {
       id: 1,
       title: "Весенний Показ 2026",
-      image: "https://images.unsplash.com/photo-1759694430835-ef9350656e7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      image:
+        "https://images.unsplash.com/photo-1759694430835-ef9350656e7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
       participants: 120,
     },
     {
       id: 2,
       title: "Зимний Чемпионат 2025",
-      image: "https://images.unsplash.com/photo-1759694625703-2dc01a50b9d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      image:
+        "https://images.unsplash.com/photo-1759694625703-2dc01a50b9d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
       participants: 95,
     },
     {
       id: 3,
       title: "Осенний Кубок 2025",
-      image: "https://images.unsplash.com/photo-1752297725917-ada2cb5d3409?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      image:
+        "https://images.unsplash.com/photo-1752297725917-ada2cb5d3409?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
       participants: 80,
     },
     {
       id: 4,
       title: "Летний Турнир 2025",
-      image: "https://images.unsplash.com/photo-1752297635224-8af034404695?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      image:
+        "https://images.unsplash.com/photo-1752297635224-8af034404695?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
       participants: 110,
     },
   ];
@@ -96,22 +119,26 @@ export function Home() {
     {
       icon: Trophy,
       title: "Официальные соревнования",
-      description: "Сертифицированные мероприятия с профессиональным судейством и международным признанием",
+      description:
+        "Сертифицированные мероприятия с профессиональным судейством и международным признанием",
     },
     {
       icon: Award,
       title: "Аттестация спортсменов",
-      description: "Получение официальных сертификатов и рейтингов через участие в соревнованиях",
+      description:
+        "Получение официальных сертификатов и рейтингов через участие в соревнованиях",
     },
     {
       icon: Users,
       title: "Сообщество и развитие",
-      description: "Общение со спортсменами по всей стране и совершенствование мастерства",
+      description:
+        "Общение со спортсменами по всей стране и совершенствование мастерства",
     },
     {
       icon: Star,
       title: "Профессиональные стандарты",
-      description: "Площадки мирового уровня, протоколы безопасности и критерии судейства",
+      description:
+        "Площадки мирового уровня, протоколы безопасности и критерии судейства",
     },
   ];
 
@@ -138,7 +165,8 @@ export function Home() {
             Где искусство встречается со спортом
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
-            Присоединяйтесь к ведущей федерации соревнований по пол-спорту, воздушному кольцу и воздушным полотнам
+            Присоединяйтесь к ведущей федерации соревнований по пол-спорту,
+            воздушному кольцу и воздушным полотнам
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -182,10 +210,13 @@ export function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Наша миссия</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+              Наша миссия
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Мы развиваем воздушный спорт через профессиональные соревнования, комплексную подготовку спортсменов
-              и сообщество, которое ценит силу, грацию и художественное самовыражение.
+              Мы развиваем воздушный спорт через профессиональные соревнования,
+              комплексную подготовку спортсменов и сообщество, которое ценит
+              силу, грацию и художественное самовыражение.
             </p>
           </motion.div>
 
@@ -193,7 +224,7 @@ export function Home() {
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0.8, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -202,7 +233,9 @@ export function Home() {
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <feature.icon size={24} className="text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-gray-900">{feature.title}</h3>
+                <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                  {feature.title}
+                </h3>
                 <p className="text-gray-600">{feature.description}</p>
               </motion.div>
             ))}
@@ -220,8 +253,12 @@ export function Home() {
             className="flex items-center justify-between mb-12"
           >
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Новости</h2>
-              <p className="text-xl text-gray-600">Последние события и объявления федерации</p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+                Новости
+              </h2>
+              <p className="text-xl text-gray-600">
+                Последние события и объявления федерации
+              </p>
             </div>
             <div className="hidden md:flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors cursor-pointer">
               Все новости <ArrowRight size={20} />
@@ -232,7 +269,7 @@ export function Home() {
             {news.map((item, index) => (
               <motion.article
                 key={item.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0.9, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -254,7 +291,9 @@ export function Home() {
                   <h3 className="text-lg font-bold mb-2 text-gray-900 group-hover:text-blue-600 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-sm line-clamp-3">{item.excerpt}</p>
+                  <p className="text-gray-600 text-sm line-clamp-3">
+                    {item.excerpt}
+                  </p>
                 </div>
               </motion.article>
             ))}
@@ -272,8 +311,12 @@ export function Home() {
             className="flex items-center justify-between mb-12"
           >
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Предстоящие соревнования</h2>
-              <p className="text-xl text-gray-600">Присоединяйтесь к спортсменам со всей страны</p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+                Предстоящие соревнования
+              </h2>
+              <p className="text-xl text-gray-600">
+                Присоединяйтесь к спортсменам со всей страны
+              </p>
             </div>
             <Link
               to="/calendar"
@@ -347,8 +390,12 @@ export function Home() {
             className="flex items-center justify-between mb-12"
           >
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Прошедшие мероприятия</h2>
-              <p className="text-xl text-gray-600">Достижения нашего сообщества</p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+                Прошедшие мероприятия
+              </h2>
+              <p className="text-xl text-gray-600">
+                Достижения нашего сообщества
+              </p>
             </div>
             <Link
               to="/reports"
@@ -377,7 +424,9 @@ export function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                   <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                     <h3 className="font-bold mb-2">{event.title}</h3>
-                    <p className="text-sm text-gray-200">{event.participants} участников</p>
+                    <p className="text-sm text-gray-200">
+                      {event.participants} участников
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -401,9 +450,12 @@ export function Home() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Готовы участвовать?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            Готовы участвовать?
+          </h2>
           <p className="text-xl text-white/90 mb-8">
-            Присоединяйтесь к сотням спортсменов, демонстрирующих своё мастерство на наших мероприятиях мирового уровня
+            Присоединяйтесь к сотням спортсменов, демонстрирующих своё
+            мастерство на наших мероприятиях мирового уровня
           </p>
           <Link
             to="/participation"

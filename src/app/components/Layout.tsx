@@ -2,7 +2,11 @@ import { Outlet, Link, useLocation } from "react-router";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import logoImage from "../../imports/Logo_FAAS_2.jpg";
+
+const logoImage = new URL(
+  "../../imports/Logo_FAAS_2-no-bg.png",
+  import.meta.url,
+).href;
 
 export function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -28,10 +32,16 @@ export function Layout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <Link to="/" className="flex items-center space-x-3">
-              <img src={logoImage} alt="FAAS" className="h-14 w-14 object-contain" />
+              <img
+                src={logoImage}
+                alt="FAAS"
+                className="h-14 w-14 object-contain"
+              />
               <div className="hidden sm:block">
                 <div className="font-bold text-xl text-blue-700">FAAS</div>
-                <div className="text-xs text-gray-600">Федерация воздушно-спортивного многоборья</div>
+                <div className="text-xs text-gray-600">
+                  Федерация воздушно-спортивного многоборья
+                </div>
               </div>
             </Link>
 
@@ -103,24 +113,61 @@ export function Layout() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <img src={logoImage} alt="FAAS" className="h-12 w-12 object-contain" />
+                <img
+                  src={logoImage}
+                  alt="FAAS"
+                  className="h-12 w-12 object-contain"
+                />
                 <div>
                   <div className="font-bold text-lg text-blue-700">FAAS</div>
-                  <div className="text-xs text-gray-600">Федерация воздушно-спортивного многоборья</div>
+                  <div className="text-xs text-gray-600">
+                    Федерация воздушно-спортивного многоборья
+                  </div>
                 </div>
               </div>
               <p className="text-gray-600">
-                Развиваем воздушный спорт через профессиональные соревнования по пол-спорту, воздушному кольцу и полотнам.
+                Развиваем воздушный спорт через профессиональные соревнования по
+                пол-спорту, воздушному кольцу и полотнам.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4 text-gray-900">Быстрые ссылки</h3>
+              <h3 className="font-semibold mb-4 text-gray-900">
+                Быстрые ссылки
+              </h3>
               <ul className="space-y-2 text-gray-600">
-                <li><Link to="/calendar" className="hover:text-blue-600 transition-colors">Календарь соревнований</Link></li>
-                <li><Link to="/reports" className="hover:text-blue-600 transition-colors">Отчёты о мероприятиях</Link></li>
-                <li><Link to="/participation" className="hover:text-blue-600 transition-colors">Как участвовать</Link></li>
-                <li><Link to="/about" className="hover:text-blue-600 transition-colors">О нас</Link></li>
+                <li>
+                  <Link
+                    to="/calendar"
+                    className="hover:text-blue-600 transition-colors"
+                  >
+                    Календарь соревнований
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/reports"
+                    className="hover:text-blue-600 transition-colors"
+                  >
+                    Отчёты о мероприятиях
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/participation"
+                    className="hover:text-blue-600 transition-colors"
+                  >
+                    Как участвовать
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/about"
+                    className="hover:text-blue-600 transition-colors"
+                  >
+                    О нас
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -130,9 +177,15 @@ export function Layout() {
                 <li>info@faas-federation.ru</li>
                 <li>+7 (495) 123-45-67</li>
                 <li className="flex space-x-4 mt-4">
-                  <a href="#" className="hover:text-blue-600 transition-colors">Instagram</a>
-                  <a href="#" className="hover:text-blue-600 transition-colors">ВКонтакте</a>
-                  <a href="#" className="hover:text-blue-600 transition-colors">Telegram</a>
+                  <a href="#" className="hover:text-blue-600 transition-colors">
+                    Instagram
+                  </a>
+                  <a href="#" className="hover:text-blue-600 transition-colors">
+                    ВКонтакте
+                  </a>
+                  <a href="#" className="hover:text-blue-600 transition-colors">
+                    Telegram
+                  </a>
                 </li>
               </ul>
             </div>
