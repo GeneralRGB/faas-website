@@ -1,6 +1,6 @@
 import { Outlet, Link, useLocation } from "react-router";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 const logoImage = new URL(
@@ -11,6 +11,10 @@ const logoImage = new URL(
 export function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [location.pathname]);
 
   const navItems = [
     { path: "/", label: "Главная" },
