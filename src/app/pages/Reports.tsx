@@ -14,33 +14,42 @@ type Report = {
   date: string;
   location: string;
   image: string;
+  resultsAvailable?: boolean;
+  resultsUrl?: string;
+  photosUrl?: string;
+  broadcastUrl?: string;
 };
+
+const summerFestImage = new URL(
+  "../../assets/summer-fest-2026.jpg",
+  import.meta.url,
+).href;
+
+const federationFinalImage = new URL(
+  "../../assets/faas-final-2026.jpg",
+  import.meta.url,
+).href;
 
 export function Reports() {
   const reports: Report[] = [
     {
       id: 1,
-      title: "Весенний Воздушный Показ 2026",
-      date: "15-17 марта 2026",
+      title: "Летний фестиваль в парке Измайлово",
+      date: "20 июня 2026 года",
       location: "Москва, Россия",
-      image:
-        "https://images.unsplash.com/photo-1759694430835-ef9350656e7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      image: summerFestImage,
+      photosUrl: "https://dimaber.ru/disk/sn-summer-fest-2026",
     },
     {
       id: 2,
-      title: "Зимний Чемпионат 2025",
-      date: "10-12 декабря 2025",
-      location: "Санкт-Петербург, Россия",
-      image:
-        "https://images.unsplash.com/photo-1773459516717-c772070071c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-    },
-    {
-      id: 3,
-      title: "Осенний Воздушный Кубок 2025",
-      date: "22-24 октября 2025",
-      location: "Екатеринбург, Россия",
-      image:
-        "https://images.unsplash.com/photo-1752297635224-8af034404695?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      title: "Международный финал федерации 2026",
+      date: "2 мая 2026 года",
+      location: "Минск, Беларусь",
+      image: federationFinalImage,
+      resultsAvailable: true,
+      photosUrl: "https://dimaber.ru/disk/faas-final-2026",
+      broadcastUrl:
+        "https://live.vkvideo.ru/sncomp/record/b1926fc2-706c-4a37-a8b4-4eeefc66cd58/records",
     },
   ];
 
@@ -110,18 +119,50 @@ export function Reports() {
                   </div>
 
                   <div className="flex flex-wrap gap-4">
-                    <button className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2.5 text-sm font-semibold text-white transition-all hover:shadow-lg hover:shadow-blue-500/40">
-                      <TableProperties size={17} />
-                      Таблица с итогами
-                    </button>
-                    <button className="flex items-center gap-2 rounded-lg bg-gray-100 px-4 py-2.5 text-sm font-semibold text-gray-700 transition-all hover:bg-gray-200">
-                      <Images size={17} />
-                      Фото
-                    </button>
-                    <button className="flex items-center gap-2 rounded-lg bg-gray-100 px-4 py-2.5 text-sm font-semibold text-gray-700 transition-all hover:bg-gray-200">
-                      <PlayCircle size={17} />
-                      Запись трансляции
-                    </button>
+                    {report.resultsUrl && (
+                      <a
+                        href={report.resultsUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2.5 text-sm font-semibold text-white transition-all hover:shadow-lg hover:shadow-blue-500/40"
+                      >
+                        <TableProperties size={17} />
+                        Таблица с итогами
+                      </a>
+                    )}
+                    {report.resultsAvailable && !report.resultsUrl && (
+                      <button
+                        type="button"
+                        disabled
+                        title="Ссылка на таблицу пока не добавлена"
+                        className="flex cursor-not-allowed items-center gap-2 rounded-lg bg-gray-100 px-4 py-2.5 text-sm font-semibold text-gray-400"
+                      >
+                        <TableProperties size={17} />
+                        Таблица с итогами
+                      </button>
+                    )}
+                    {report.photosUrl && (
+                      <a
+                        href={report.photosUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2.5 text-sm font-semibold text-white transition-all hover:shadow-lg hover:shadow-blue-500/40"
+                      >
+                        <Images size={17} />
+                        Фото
+                      </a>
+                    )}
+                    {report.broadcastUrl && (
+                      <a
+                        href={report.broadcastUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-2 rounded-lg bg-gray-100 px-4 py-2.5 text-sm font-semibold text-gray-700 transition-all hover:bg-gray-200"
+                      >
+                        <PlayCircle size={17} />
+                        Запись трансляции
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
