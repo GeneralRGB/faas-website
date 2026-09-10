@@ -20,7 +20,7 @@ export function Layout() {
     { path: "/", label: "Главная" },
     { path: "/calendar", label: "Календарь" },
     { path: "/reports", label: "Отчёты" },
-    { path: "/participation", label: "Участие" },
+    { path: "/participation", label: "Документы" },
     { path: "/about", label: "О нас" },
   ];
 
@@ -161,7 +161,7 @@ export function Layout() {
                     to="/participation"
                     className="hover:text-blue-600 transition-colors"
                   >
-                    Как участвовать
+                    Документы
                   </Link>
                 </li>
                 <li>

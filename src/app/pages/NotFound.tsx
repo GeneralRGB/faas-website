@@ -42,7 +42,7 @@ export function NotFound() {
             className="flex flex-col items-center gap-3 p-6 bg-white rounded-2xl border-2 border-gray-200 hover:border-purple-600 hover:shadow-lg transition-all group"
           >
             <FileText className="text-purple-600 group-hover:scale-110 transition-transform" size={32} />
-            <span className="font-semibold text-gray-900">Участие</span>
+            <span className="font-semibold text-gray-900">Документы</span>
           </Link>
         </div>
       </motion.div>
