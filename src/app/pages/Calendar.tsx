@@ -146,16 +146,13 @@ export function Calendar() {
         </motion.div>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {events.map((event, index) => {
+          {events.map((event) => {
             const status = event.status ? statusDetails[event.status] : null;
             const StatusIcon = status?.icon;
 
             return (
-              <motion.article
+              <article
                 key={event.id}
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: index * 0.06 }}
                 className="group relative overflow-hidden rounded-3xl border-2 border-gray-200 bg-white p-7 transition-all hover:-translate-y-1 hover:border-blue-500 hover:shadow-xl md:p-8"
               >
                 <div className="relative flex h-full flex-col">
@@ -207,7 +204,7 @@ export function Calendar() {
                     )}
                   </div>
                 </div>
-              </motion.article>
+              </article>
             );
           })}
         </div>

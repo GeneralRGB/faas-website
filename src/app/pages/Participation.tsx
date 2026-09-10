@@ -1,5 +1,10 @@
 import { motion } from "motion/react";
-import { ClipboardList, FileText, ScrollText } from "lucide-react";
+import {
+  ClipboardList,
+  ExternalLink,
+  FileText,
+  ScrollText,
+} from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -9,9 +14,19 @@ import {
 
 export function Participation() {
   const participationDocuments = [
-    "Регламент подготовки атлетов артистической категории",
-    "Регламент подготовки атлетов спортивной категории",
-    "Регламент подготовки атлетов к выполнению разрядных нормативов",
+    {
+      title: "Регламент подготовки атлетов артистической категории",
+      url: "https://disk.yandex.ru/d/_KtFz6LR-WIR9A/%D0%9F%D0%A0%D0%9E%D0%98%D0%97%D0%92%D0%9E%D0%9B%D0%AC%D0%9D%D0%AB%D0%95%20%D0%9A%D0%90%D0%A2%D0%95%D0%93%D0%9E%D0%A0%D0%98%D0%98%20%D0%9F%D0%A0%D0%90%D0%92%D0%98%D0%9B%D0%90/%D0%90%D0%A0%D0%A2%D0%98%D0%A1%D0%A2%D0%98%D0%9A%20%D0%9F%D0%A0%D0%9E%D0%98%D0%97%D0%92%D0%9E%D0%9B%D0%AC%D0%9D%D0%AB%D0%95",
+    },
+    {
+      title: "Регламент подготовки атлетов спортивной категории",
+      url: "https://disk.yandex.ru/d/_KtFz6LR-WIR9A/%D0%9F%D0%A0%D0%9E%D0%98%D0%97%D0%92%D0%9E%D0%9B%D0%AC%D0%9D%D0%AB%D0%95%20%D0%9A%D0%90%D0%A2%D0%95%D0%93%D0%9E%D0%A0%D0%98%D0%98%20%D0%9F%D0%A0%D0%90%D0%92%D0%98%D0%9B%D0%90/%D0%A1%D0%9F%D0%9E%D0%A0%D0%A2%D0%98%D0%92%D0%9D%D0%AB%D0%95%20%D0%9F%D0%A0%D0%9E%D0%98%D0%97%D0%92%D0%9E%D0%9B%D0%AC%D0%9D%D0%AB%D0%95",
+    },
+    {
+      title:
+        "Регламент подготовки атлетов к выполнению разрядных нормативов",
+      url: "https://disk.yandex.ru/d/_KtFz6LR-WIR9A/%D0%A0%D0%90%D0%97%D0%A0%D0%AF%D0%94%D0%9D%D0%AB%D0%95%20%D0%9F%D0%A0%D0%90%D0%92%D0%98%D0%9B%D0%90",
+    },
   ];
 
   return (
@@ -54,16 +69,23 @@ export function Participation() {
               <AccordionContent className="pb-7">
                 <div className="space-y-3 border-t border-gray-100 pt-5">
                   {participationDocuments.map((document) => (
-                    <div
-                      key={document}
-                      className="flex items-center gap-4 rounded-2xl bg-gray-50 px-5 py-4 text-gray-800"
+                    <a
+                      key={document.title}
+                      href={document.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group flex items-center gap-4 rounded-2xl bg-gray-50 px-5 py-4 text-gray-800 transition-colors hover:bg-blue-50 hover:text-blue-700"
                     >
                       <FileText
                         size={21}
                         className="shrink-0 text-blue-600"
                       />
-                      <span className="font-medium">{document}</span>
-                    </div>
+                      <span className="font-medium">{document.title}</span>
+                      <ExternalLink
+                        size={18}
+                        className="ml-auto shrink-0 text-gray-400 transition-colors group-hover:text-blue-600"
+                      />
+                    </a>
                   ))}
                 </div>
               </AccordionContent>

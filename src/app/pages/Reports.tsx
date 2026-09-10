@@ -71,12 +71,9 @@ export function Reports() {
         </motion.div>
 
         <div className="space-y-8">
-          {reports.map((report, index) => (
-            <motion.article
+          {reports.map((report) => (
+            <article
               key={report.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group overflow-hidden rounded-3xl border-2 border-gray-200 bg-white transition-all hover:-translate-y-1 hover:border-blue-500 hover:shadow-xl md:h-[350px]"
             >
               <div className="grid grid-cols-1 md:h-full md:grid-cols-[0.75fr_1fr]">
@@ -166,7 +163,7 @@ export function Reports() {
                   </div>
                 </div>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
 
