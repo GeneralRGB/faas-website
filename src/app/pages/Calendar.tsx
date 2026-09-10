@@ -15,6 +15,14 @@ type EventStatus =
   | "coming-soon"
   | "details-pending";
 
+type EventTag = "Сдача разрядов" | "Арт" | "Спорт";
+
+const tagStyles: Record<EventTag, string> = {
+  "Сдача разрядов": "bg-green-50 text-green-700 ring-green-200",
+  Арт: "bg-pink-50 text-pink-700 ring-pink-200",
+  Спорт: "bg-blue-50 text-blue-700 ring-blue-200",
+};
+
 const statusDetails = {
   "registration-open": {
     label: "Регистрация открыта",
@@ -47,6 +55,7 @@ type CalendarEvent = {
   city: string;
   title: string;
   status?: EventStatus;
+  tags?: EventTag[];
 };
 
 export function Calendar() {
@@ -57,6 +66,7 @@ export function Calendar() {
       city: "Москва",
       title: "SN Artistic Championship",
       status: "registration-closed",
+      tags: ["Арт"],
     },
     {
       id: 2,
@@ -64,6 +74,7 @@ export function Calendar() {
       city: "Москва / Реутов",
       title: "SN Sport&Art",
       status: "coming-soon",
+      tags: ["Сдача разрядов", "Арт", "Спорт"],
     },
     {
       id: 3,
@@ -71,6 +82,7 @@ export function Calendar() {
       city: "Краснодар",
       title: "Южный рубеж",
       status: "coming-soon",
+      tags: ["Сдача разрядов", "Арт", "Спорт"],
     },
     {
       id: 4,
@@ -78,6 +90,7 @@ export function Calendar() {
       city: "Москва / Реутов",
       title: "SN Sport&Art",
       status: "coming-soon",
+      tags: ["Сдача разрядов", "Арт", "Спорт"],
     },
     {
       id: 5,
@@ -85,6 +98,7 @@ export function Calendar() {
       city: "Воронеж",
       title: "Полет 36",
       status: "details-pending",
+      tags: ["Сдача разрядов", "Арт", "Спорт"],
     },
     {
       id: 6,
@@ -92,6 +106,7 @@ export function Calendar() {
       city: "Минск",
       title: "SN Sport&Art — финал Федерации",
       status: "coming-soon",
+      tags: ["Сдача разрядов", "Арт", "Спорт"],
     },
     {
       id: 7,
@@ -99,6 +114,7 @@ export function Calendar() {
       city: "Москва",
       title: "SN Summer Fest",
       status: "coming-soon",
+      tags: ["Арт", "Спорт"],
     },
     {
       id: 8,
@@ -142,44 +158,55 @@ export function Calendar() {
                 transition={{ duration: 0.45, delay: index * 0.06 }}
                 className="group relative overflow-hidden rounded-3xl border-2 border-gray-200 bg-white p-7 transition-all hover:-translate-y-1 hover:border-blue-500 hover:shadow-xl md:p-8"
               >
-              <div className="absolute right-6 top-5 text-6xl font-bold text-gray-100 transition-colors group-hover:text-blue-50">
-                {String(event.id).padStart(2, "0")}
-              </div>
-
-              <div className="relative flex h-full flex-col">
-                <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2 font-semibold text-white shadow-sm">
-                  <CalendarIcon size={18} />
-                  {event.date}
-                </div>
-
-                <h2 className="mb-6 max-w-lg text-2xl font-bold leading-tight text-gray-900 md:text-3xl">
-                  {event.title}
-                </h2>
-
-                <div className="mt-auto flex flex-col gap-4 border-t border-gray-100 pt-5 sm:flex-row sm:items-center sm:justify-between">
-                  <div className="flex items-start gap-3 text-gray-700">
-                    <MapPin
-                      size={20}
-                      className="mt-0.5 shrink-0 text-pink-600"
-                    />
-                    <div>
-                      <div className="text-xs font-semibold uppercase tracking-wide text-gray-400">
-                        Город
-                      </div>
-                      <div className="font-medium">{event.city}</div>
+                <div className="relative flex h-full flex-col">
+                  <div className="mb-6 flex flex-wrap items-start justify-between gap-3">
+                    <div className="inline-flex w-fit items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2 font-semibold text-white shadow-sm">
+                      <CalendarIcon size={18} />
+                      {event.date}
                     </div>
+
+                    {event.tags && (
+                      <div className="ml-auto flex flex-wrap justify-end gap-2">
+                        {event.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className={`rounded-full px-3 py-1.5 text-xs font-semibold ring-1 ring-inset ${tagStyles[tag]}`}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
-                  {status && StatusIcon && (
-                    <div
-                      className={`inline-flex w-fit items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold ${status.className}`}
-                    >
-                      <StatusIcon size={17} />
-                      {status.label}
+                  <h2 className="mb-6 max-w-lg text-2xl font-bold leading-tight text-gray-900 md:text-3xl">
+                    {event.title}
+                  </h2>
+
+                  <div className="mt-auto flex flex-col gap-4 border-t border-gray-100 pt-5 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="flex items-start gap-3 text-gray-700">
+                      <MapPin
+                        size={20}
+                        className="mt-0.5 shrink-0 text-pink-600"
+                      />
+                      <div>
+                        <div className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+                          Город
+                        </div>
+                        <div className="font-medium">{event.city}</div>
+                      </div>
                     </div>
-                  )}
+
+                    {status && StatusIcon && (
+                      <div
+                        className={`inline-flex w-fit items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold ${status.className}`}
+                      >
+                        <StatusIcon size={17} />
+                        {status.label}
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
               </motion.article>
             );
           })}
