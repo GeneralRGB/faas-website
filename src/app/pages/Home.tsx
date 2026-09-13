@@ -56,8 +56,8 @@ export function Home() {
             Где искусство встречается со спортом
           </h1>
           <p className="mx-auto mb-8 max-w-3xl text-xl text-gray-700 md:text-2xl">
-            Присоединяйтесь к ведущей федерации соревнований по пол-спорту,
-            воздушному кольцу и воздушным полотнам
+            Присоединяйтесь к ведущей федерации соревнований по воздушной
+            гимнастике и пилонному спорту
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Link
