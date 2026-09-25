@@ -181,15 +181,22 @@ export function Reports() {
             моменты, закулисный контент и истории спортсменов
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="px-8 py-4 bg-white text-blue-700 rounded-full font-semibold hover:shadow-lg hover:shadow-white/50 transition-all">
-              Instagram
-            </button>
-            <button className="px-8 py-4 bg-white text-blue-700 rounded-full font-semibold hover:shadow-lg hover:shadow-white/50 transition-all">
-              ВКонтакте
-            </button>
-            <button className="px-8 py-4 bg-white text-blue-700 rounded-full font-semibold hover:shadow-lg hover:shadow-white/50 transition-all">
+            <a
+              href="https://t.me/MFSOOmos"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full bg-white px-8 py-4 font-semibold text-blue-700 transition-all hover:shadow-lg hover:shadow-white/50"
+            >
               Telegram
-            </button>
+            </a>
+            <a
+              href="https://vk.ru/club226937127"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full bg-white px-8 py-4 font-semibold text-blue-700 transition-all hover:shadow-lg hover:shadow-white/50"
+            >
+              ВК
+            </a>
           </div>
         </motion.div>
       </div>

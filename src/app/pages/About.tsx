@@ -4,12 +4,35 @@ import {
   Target,
   Users,
   Award,
-  Building,
   FileText,
   Mail,
-  Phone,
 } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+
+const annaSaratovaImage = new URL(
+  "../../assets/anna-saratova.jpg",
+  import.meta.url,
+).href;
+
+const ekaterinaShevelyovaImage = new URL(
+  "../../assets/ekaterina-shevelyova.jpg",
+  import.meta.url,
+).href;
+
+const smartPoleLogo = new URL(
+  "../../assets/smart-pole-logo.jpg",
+  import.meta.url,
+).href;
+
+const nordanceStudioLogo = new URL(
+  "../../assets/nordance-studio-logo.jpg",
+  import.meta.url,
+).href;
+
+const energyLogo = new URL(
+  "../../assets/energy-logo.jpg",
+  import.meta.url,
+).href;
 
 export function About() {
   const values = [
@@ -43,26 +66,21 @@ export function About() {
     {
       name: "Анна Олеговна Саратова",
       role: "Президент федерации",
-      image:
-        "https://images.unsplash.com/photo-1752297725917-ada2cb5d3409?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
-      bio: "Бывшая профессиональная воздушная гимнастка с 15-летним опытом участия в соревнованиях.",
+      image: annaSaratovaImage,
+      bio: "Многократная чемпионка международных чемпионатов. Основатель Студии пилонного спорта и воздушной гимнастики Nordance Studio, основатель Бренда SN Competitions, SN Fest и спортивных съездов SN Camp.",
     },
     {
-      name: "Екатерина Сергеевна Шевелева",
+      name: "Екатерина Сергеевна Шевелёва",
       role: "Вице-президент федерации",
-      image:
-        "https://images.unsplash.com/photo-1772739649011-4e5e1c8b6b4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
-      bio: "Международный судья и координатор крупных мероприятий по воздушному спорту по всему миру.",
+      image: ekaterinaShevelyovaImage,
+      bio: "Основатель студии пилонного спорта и воздушной гимнастики Smart Pole, бренда SN Competition. Судья международного и всероссийского уровня, тренер и постановщик соревновательных программ, работающий в сфере с 2014 года. Многократная победительница и призёр чемпионатов России и Европы, чемпионка России по воздушному кольцу IPSF и пилонному спорту.",
     },
   ];
 
   const partners = [
-    "Элит Воздушная Академия",
-    "Студия Пол-Спорта Skybound",
-    "Центр Воздушных Искусств",
-    "Performance Plus Athletics",
-    "FlexFlow Тренировки",
-    "Gravity Defiance Студия",
+    { name: "Smart Pole", logo: smartPoleLogo },
+    { name: "Nordance Studio", logo: nordanceStudioLogo },
+    { name: "Energy", logo: energyLogo },
   ];
 
   return (
@@ -76,10 +94,6 @@ export function About() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-700 via-purple-600 to-pink-600 bg-clip-text text-transparent">
             О нашей федерации
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Посвящены развитию воздушных видов спорта через профессиональные
-            соревнования, подготовку спортсменов и создание сообщества
-          </p>
         </motion.div>
 
         <motion.div
@@ -165,7 +179,7 @@ export function About() {
           <h2 className="text-4xl font-bold mb-12 text-center text-gray-900">
             Команда руководства
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
             {team.map((member, index) => (
               <motion.div
                 key={index}
@@ -175,11 +189,11 @@ export function About() {
                 transition={{ delay: index * 0.1 }}
                 className="group"
               >
-                <div className="relative h-80 rounded-2xl overflow-hidden mb-4 border-2 border-gray-200 group-hover:border-purple-600 transition-all">
+                <div className="relative aspect-square overflow-hidden rounded-2xl border-2 border-gray-200 bg-gray-50 mb-4 transition-all group-hover:border-purple-600">
                   <ImageWithFallback
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="h-full w-full object-contain"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -207,20 +221,26 @@ export function About() {
               Мы гордимся сотрудничеством с ведущими студиями и организациями,
               разделяющими нашу приверженность к превосходству
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
               {partners.map((partner, index) => (
                 <motion.div
-                  key={index}
+                  key={partner.name}
                   initial={{ opacity: 0.8, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="bg-white rounded-xl p-6 text-center border-2 border-gray-200 hover:border-blue-600 hover:shadow-lg transition-all"
+                  className="flex flex-col overflow-hidden rounded-2xl border-2 border-gray-200 bg-white text-center transition-all hover:border-blue-600 hover:shadow-lg"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Building size={24} className="text-white" />
+                  <div className="flex h-52 items-center justify-center bg-white p-5">
+                    <ImageWithFallback
+                      src={partner.logo}
+                      alt={`Логотип ${partner.name}`}
+                      className="h-full w-full object-contain"
+                    />
                   </div>
-                  <p className="font-semibold text-gray-900">{partner}</p>
+                  <p className="border-t border-gray-100 px-6 py-4 text-lg font-semibold text-gray-900">
+                    {partner.name}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -264,14 +284,6 @@ export function About() {
                   Волочаевская ул, д. 13, кв. 51
                 </p>
               </div>
-              <div className="pt-4 border-t border-gray-200">
-                <a
-                  href="#"
-                  className="text-blue-600 hover:text-blue-700 transition-colors font-semibold"
-                >
-                  Скачать юридические документы
-                </a>
-              </div>
             </div>
           </div>
 
@@ -286,47 +298,37 @@ export function About() {
               <div className="flex items-start gap-3">
                 <Mail className="text-blue-600 flex-shrink-0 mt-1" size={20} />
                 <div>
-                  <p className="font-semibold mb-1 text-gray-900">
-                    Общие вопросы
-                  </p>
+                  <p className="font-semibold mb-1 text-gray-900">Почта</p>
                   <a
-                    href="mailto:info@faas-federation.ru"
+                    href="mailto:FVSM-FAAS@yandex.ru"
                     className="text-gray-700 hover:text-blue-600 transition-colors"
                   >
-                    info@faas-federation.ru
+                    FVSM-FAAS@yandex.ru
                   </a>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <Mail className="text-blue-600 flex-shrink-0 mt-1" size={20} />
-                <div>
-                  <p className="font-semibold mb-1 text-gray-900">
-                    Поддержка спортсменов
-                  </p>
-                  <a
-                    href="mailto:athletes@faas-federation.ru"
-                    className="text-gray-700 hover:text-blue-600 transition-colors"
-                  >
-                    athletes@faas-federation.ru
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Phone className="text-blue-600 flex-shrink-0 mt-1" size={20} />
-                <div>
-                  <p className="font-semibold mb-1 text-gray-900">Телефон</p>
-                  <a
-                    href="tel:+74951234567"
-                    className="text-gray-700 hover:text-blue-600 transition-colors"
-                  >
-                    +7 (495) 123-45-67
-                  </a>
-                </div>
-              </div>
-              <div className="pt-4 border-t border-gray-200">
-                <p className="text-sm text-gray-600">
-                  Часы работы: Понедельник - Пятница, 9:00 - 18:00 МСК
+              <div className="border-t border-gray-200 pt-4">
+                <p className="mb-3 font-semibold text-gray-900">
+                  Социальные сети
                 </p>
+                <div className="flex flex-wrap gap-3">
+                  <a
+                    href="https://t.me/MFSOOmos"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-full bg-blue-50 px-5 py-2.5 font-semibold text-blue-700 transition-colors hover:bg-blue-100"
+                  >
+                    Telegram
+                  </a>
+                  <a
+                    href="https://vk.ru/club226937127"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-full bg-blue-50 px-5 py-2.5 font-semibold text-blue-700 transition-colors hover:bg-blue-100"
+                  >
+                    ВК
+                  </a>
+                </div>
               </div>
             </div>
           </div>

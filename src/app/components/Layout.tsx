@@ -177,17 +177,30 @@ export function Layout() {
             <div>
               <h3 className="font-semibold mb-4 text-gray-900">Контакты</h3>
               <ul className="space-y-2 text-gray-600">
-                <li>info@faas-federation.ru</li>
-                <li>+7 (495) 123-45-67</li>
+                <li>
+                  <a
+                    href="mailto:FVSM-FAAS@yandex.ru"
+                    className="hover:text-blue-600 transition-colors"
+                  >
+                    FVSM-FAAS@yandex.ru
+                  </a>
+                </li>
                 <li className="flex space-x-4 mt-4">
-                  <a href="#" className="hover:text-blue-600 transition-colors">
-                    Instagram
-                  </a>
-                  <a href="#" className="hover:text-blue-600 transition-colors">
-                    ВКонтакте
-                  </a>
-                  <a href="#" className="hover:text-blue-600 transition-colors">
+                  <a
+                    href="https://t.me/MFSOOmos"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-blue-600 transition-colors"
+                  >
                     Telegram
+                  </a>
+                  <a
+                    href="https://vk.ru/club226937127"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-blue-600 transition-colors"
+                  >
+                    ВК
                   </a>
                 </li>
               </ul>

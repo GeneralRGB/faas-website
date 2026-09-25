@@ -25,7 +25,7 @@ const tagStyles: Record<EventTag, string> = {
 
 const statusDetails = {
   "registration-open": {
-    label: "Регистрация открыта",
+    label: "Идёт регистрация",
     className: "bg-green-50 text-green-700",
     icon: CalendarIcon,
   },
@@ -56,6 +56,7 @@ type CalendarEvent = {
   title: string;
   status?: EventStatus;
   tags?: EventTag[];
+  registrationUrl?: string;
 };
 
 export function Calendar() {
@@ -73,8 +74,9 @@ export function Calendar() {
       date: "5–6 декабря 2026",
       city: "Москва / Реутов",
       title: "SN Sport&Art",
-      status: "coming-soon",
+      status: "registration-open",
       tags: ["Сдача разрядов", "Арт", "Спорт"],
+      registrationUrl: "https://forms.gle/rNHWunA9vvGu3qr27",
     },
     {
       id: 3,
@@ -194,14 +196,27 @@ export function Calendar() {
                       </div>
                     </div>
 
-                    {status && StatusIcon && (
-                      <div
-                        className={`inline-flex w-fit items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold ${status.className}`}
-                      >
-                        <StatusIcon size={17} />
-                        {status.label}
-                      </div>
-                    )}
+                    <div className="flex flex-wrap items-center gap-3 sm:justify-end">
+                      {status && StatusIcon && (
+                        <div
+                          className={`inline-flex w-fit items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold ${status.className}`}
+                        >
+                          <StatusIcon size={17} />
+                          {status.label}
+                        </div>
+                      )}
+
+                      {event.registrationUrl && (
+                        <a
+                          href={event.registrationUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
+                        >
+                          Подать заявку <ArrowRight size={17} />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </article>
