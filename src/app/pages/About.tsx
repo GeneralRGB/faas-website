@@ -1,12 +1,5 @@
 import { motion } from "motion/react";
-import {
-  Heart,
-  Target,
-  Users,
-  Award,
-  FileText,
-  Mail,
-} from "lucide-react";
+import { Heart, Target, Users, Award, FileText, Mail } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 const annaSaratovaImage = new URL(
@@ -29,10 +22,8 @@ const nordanceStudioLogo = new URL(
   import.meta.url,
 ).href;
 
-const energyLogo = new URL(
-  "../../assets/energy-logo.jpg",
-  import.meta.url,
-).href;
+const energyLogo = new URL("../../assets/energy-logo.jpg", import.meta.url)
+  .href;
 
 export function About() {
   const values = [
@@ -73,7 +64,7 @@ export function About() {
       name: "Екатерина Сергеевна Шевелёва",
       role: "Вице-президент федерации",
       image: ekaterinaShevelyovaImage,
-      bio: "Основатель студии пилонного спорта и воздушной гимнастики Smart Pole, бренда SN Competition. Судья международного и всероссийского уровня, тренер и постановщик соревновательных программ, работающий в сфере с 2014 года. Многократная победительница и призёр чемпионатов России и Европы, чемпионка России по воздушному кольцу IPSF и пилонному спорту.",
+      bio: "Основатель студии пилонного спорта и воздушной гимнастики Smart Pole, бренда SN Competitions. Судья международного и всероссийского уровня, тренер и постановщик соревновательных программ, работающий в сфере с 2014 года. Многократная победительница и призёр чемпионатов России и Европы, чемпионка России по воздушному кольцу IPSF и пилонному спорту.",
     },
   ];
 
@@ -102,17 +93,9 @@ export function About() {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-96 rounded-3xl overflow-hidden border-2 border-gray-200">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1773459516717-c772070071c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-                alt="Воздушная гимнастика"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-            </div>
+          <div className="mx-auto max-w-4xl">
             <div>
-              <h2 className="text-4xl font-bold mb-6 text-gray-900">
+              <h2 className="mb-8 text-center text-4xl font-bold text-gray-900">
                 Наша миссия
               </h2>
               <p className="text-lg text-gray-700 mb-6">

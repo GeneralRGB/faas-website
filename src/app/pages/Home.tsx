@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
 import { Link } from "react-router";
 import { ArrowRight, Award, Star, Trophy, Users } from "lucide-react";
-import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 export function Home() {
   const features = [
@@ -34,15 +33,6 @@ export function Home() {
   return (
     <div className="min-h-screen bg-white">
       <section className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-        <div className="absolute inset-0 z-0">
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1773459516717-c772070071c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
-            alt="Воздушная гимнастика"
-            className="h-full w-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-blue-50/50 to-white" />
-        </div>
-
         <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-blue-300/20 blur-3xl" />
         <div className="absolute -right-24 bottom-20 h-80 w-80 rounded-full bg-pink-300/20 blur-3xl" />
 
