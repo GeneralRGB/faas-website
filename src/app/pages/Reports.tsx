@@ -62,11 +62,10 @@ export function Reports() {
           className="text-center mb-16"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-700 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Отчёты о мероприятиях
+            Результаты и фото
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Празднуем достижения, выступления и незабываемые моменты наших
-            соревнований
+            Итоговые материалы, фотографии и записи прошедших соревнований
           </p>
         </motion.div>
 

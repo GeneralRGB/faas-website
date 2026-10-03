@@ -41,7 +41,8 @@ export function Participation() {
             Документы
           </h1>
           <p className="mx-auto max-w-3xl text-xl text-gray-600">
-            Регламенты и официальные материалы Федерации FAAS
+            Разрядные программы, правила SPORT и ART и официальные материалы
+            Федерации FAAS
           </p>
         </motion.div>
 
@@ -63,7 +64,7 @@ export function Participation() {
                   <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 text-white">
                     <ClipboardList size={22} />
                   </span>
-                  Участие
+                  Правила и разрядные программы
                 </span>
               </AccordionTrigger>
               <AccordionContent className="pb-7">
