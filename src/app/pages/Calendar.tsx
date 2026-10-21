@@ -1,3 +1,4 @@
+import { eventImage, eventSrcSet } from "../data/photos";
 import { motion } from "motion/react";
 import {
   ArrowRight,
@@ -9,16 +10,6 @@ import {
 } from "lucide-react";
 import { Link } from "react-router";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-
-const federationFinalImage = new URL(
-  "../../assets/faas-final-2026.jpg",
-  import.meta.url,
-).href;
-
-const summerFestImage = new URL(
-  "../../assets/summer-fest-2026.jpg",
-  import.meta.url,
-).href;
 
 type EventStatus =
   | "registration-open"
@@ -64,7 +55,9 @@ type CalendarEvent = {
   status?: EventStatus;
   tags?: EventTag[];
   registrationUrl?: string;
-  image: string;
+  image?: string;
+  imageAlt?: string;
+  imageSrcSet?: string;
 };
 
 export function Calendar() {
@@ -76,7 +69,7 @@ export function Calendar() {
       title: "SN Artistic Championship",
       status: "registration-closed",
       tags: ["Арт"],
-      image: summerFestImage,
+
     },
     {
       id: 2,
@@ -86,7 +79,9 @@ export function Calendar() {
       status: "registration-open",
       tags: ["Сдача разрядов", "Арт", "Спорт"],
       registrationUrl: "https://forms.gle/rNHWunA9vvGu3qr27",
-      image: federationFinalImage,
+      image: eventImage("sn-december-2026"),
+      imageSrcSet: eventSrcSet("sn-december-2026"),
+      imageAlt: "Афиша SN Sport & Art: 5–6 декабря 2026, Москва / Реутов",
     },
     {
       id: 3,
@@ -95,7 +90,9 @@ export function Calendar() {
       title: "Южный рубеж",
       status: "coming-soon",
       tags: ["Сдача разрядов", "Арт", "Спорт"],
-      image: summerFestImage,
+      image: eventImage("south-frontier"),
+      imageSrcSet: eventSrcSet("south-frontier"),
+      imageAlt: "Эмблема чемпионата «Южный рубеж», Краснодар",
     },
     {
       id: 4,
@@ -104,7 +101,9 @@ export function Calendar() {
       title: "SN Sport&Art",
       status: "coming-soon",
       tags: ["Сдача разрядов", "Арт", "Спорт"],
-      image: federationFinalImage,
+      image: eventImage("sn-sport-art"),
+      imageSrcSet: eventSrcSet("sn-sport-art"),
+      imageAlt: "Эмблема SN Sport and Art, Москва",
     },
     {
       id: 5,
@@ -113,7 +112,9 @@ export function Calendar() {
       title: "Полет 36",
       status: "details-pending",
       tags: ["Сдача разрядов", "Арт", "Спорт"],
-      image: summerFestImage,
+      image: eventImage("polet-36"),
+      imageSrcSet: eventSrcSet("polet-36"),
+      imageAlt: "Эмблема чемпионата «Полет 36», Воронеж",
     },
     {
       id: 6,
@@ -122,7 +123,7 @@ export function Calendar() {
       title: "SN Sport&Art — финал Федерации",
       status: "coming-soon",
       tags: ["Сдача разрядов", "Арт", "Спорт"],
-      image: federationFinalImage,
+
     },
     {
       id: 7,
@@ -131,7 +132,7 @@ export function Calendar() {
       title: "SN Summer Fest",
       status: "coming-soon",
       tags: ["Арт", "Спорт"],
-      image: summerFestImage,
+
     },
     {
       id: 8,
@@ -139,7 +140,7 @@ export function Calendar() {
       city: "Место проведения уточняется",
       title: "Летние спортивные сборы FAAS",
       status: "details-pending",
-      image: federationFinalImage,
+
     },
   ];
 
@@ -175,11 +176,14 @@ export function Calendar() {
               >
                 <div className="grid md:grid-cols-[220px_1fr] lg:grid-cols-[260px_1fr]">
                   <div className="h-52 overflow-hidden bg-gray-100 md:h-full md:min-h-60">
-                    <ImageWithFallback
+                    {event.image ? <ImageWithFallback
                       src={event.image}
-                      alt={`Иллюстрация к соревнованию «${event.title}»`}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
+                      srcSet={event.imageSrcSet}
+                      sizes="(min-width: 1024px) 260px, (min-width: 768px) 220px, 100vw"
+                      loading="lazy" decoding="async"
+                      alt={event.imageAlt || event.title}
+                      className="h-full w-full object-contain"
+                    /> : <div className="flex h-full min-h-52 flex-col items-center justify-center gap-4 bg-gradient-to-br from-blue-50 to-purple-50 p-6 text-center text-blue-700"><CalendarIcon size={36} aria-hidden="true" /><span className="text-lg font-semibold">{event.title}</span></div>}
                   </div>
 
                   <div className="flex flex-col p-6 md:p-8">

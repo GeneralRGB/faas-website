@@ -1,3 +1,5 @@
+import { PhotoGallery } from "../components/PhotoGallery";
+import { eventImage, eventSrcSet } from "../data/photos";
 import { motion } from "motion/react";
 import { Link } from "react-router";
 import {
@@ -10,23 +12,12 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
-const federationFinalImage = new URL(
-  "../../assets/faas-final-2026.jpg",
-  import.meta.url,
-).href;
-
-const summerFestImage = new URL(
-  "../../assets/summer-fest-2026.jpg",
-  import.meta.url,
-).href;
-
 const actions = [
   {
     title: "Подать заявку",
     description: "Выберите соревнование и перейдите к регистрации.",
     linkLabel: "Выбрать соревнование",
     to: "/calendar",
-    image: federationFinalImage,
     icon: Send,
   },
   {
@@ -34,7 +25,6 @@ const actions = [
     description: "Разрядные и произвольные программы SPORT и ART.",
     linkLabel: "Открыть документы",
     to: "/participation",
-    image: summerFestImage,
     icon: FileText,
   },
   {
@@ -42,7 +32,6 @@ const actions = [
     description: "Итоговые материалы и фотографии прошедших соревнований.",
     linkLabel: "Посмотреть результаты",
     to: "/reports",
-    image: federationFinalImage,
     icon: Images,
   },
 ];
@@ -93,8 +82,11 @@ export function Home() {
             className="relative overflow-hidden rounded-[2rem] bg-gray-200 shadow-2xl shadow-blue-900/15"
           >
             <ImageWithFallback
-              src={federationFinalImage}
-              alt="Выступление на соревнованиях FAAS"
+              src={eventImage("pole-performance")}
+              srcSet={eventSrcSet("pole-performance")}
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              alt="Спортсменка на пилоне на фоне экрана с логотипом FAAS"
+              width={1280} height={960} fetchPriority="high"
               className="aspect-[4/3] h-full w-full object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-6 pb-6 pt-16 text-sm font-medium text-white/90">
@@ -112,7 +104,7 @@ export function Home() {
                 Предстоящее соревнование
               </div>
               <h2 className="text-3xl font-bold text-gray-950 md:text-4xl">
-                SN Artistic Championship
+                SN Sport&Art
               </h2>
             </div>
             <Link
@@ -126,28 +118,31 @@ export function Home() {
           <div className="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm">
             <div className="grid md:grid-cols-[260px_1fr]">
               <ImageWithFallback
-                src={summerFestImage}
-                alt="Воздушная гимнастика на соревнованиях FAAS"
-                className="h-56 w-full object-cover md:h-full"
+                src={eventImage("sn-december-2026")}
+                srcSet={eventSrcSet("sn-december-2026")}
+                sizes="(min-width: 768px) 260px, 100vw"
+                loading="lazy" decoding="async"
+                alt="Афиша SN Sport & Art, 5–6 декабря 2026, Москва / Реутов"
+                className="max-h-96 w-full bg-gray-950 object-contain md:h-full"
               />
               <div className="flex flex-col gap-6 p-6 md:flex-row md:items-center md:justify-between md:p-8">
                 <div>
                   <div className="mb-4 inline-flex rounded-full bg-blue-50 px-3 py-1.5 text-sm font-semibold text-blue-700">
-                    ART
+                    SPORT · ART
                   </div>
                   <div className="flex flex-wrap gap-x-6 gap-y-3 text-gray-700">
                     <span className="inline-flex items-center gap-2 font-medium">
                       <CalendarDays size={19} className="text-blue-600" />
-                      17 октября 2026
+                      5–6 декабря 2026
                     </span>
                     <span className="inline-flex items-center gap-2 font-medium">
-                      <MapPin size={19} className="text-blue-600" /> Москва
+                      <MapPin size={19} className="text-blue-600" /> Москва / Реутов
                     </span>
                   </div>
                 </div>
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
                   <span className="rounded-full bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-600">
-                    Регистрация закрыта
+                    Идёт регистрация
                   </span>
                   <Link
                     to="/calendar"
@@ -180,16 +175,9 @@ export function Home() {
                 to={action.to}
                 className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl"
               >
-                <div className="h-48 overflow-hidden bg-gray-100">
-                  <ImageWithFallback
-                    src={action.image}
-                    alt=""
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
                 <div className="p-6">
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
-                    <action.icon size={21} />
+                  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
+                    <action.icon size={28} aria-hidden="true" />
                   </div>
                   <h3 className="mb-2 text-2xl font-bold text-gray-950">
                     {action.title}
@@ -206,6 +194,8 @@ export function Home() {
           </div>
         </div>
       </section>
+
+      <div className="mx-auto max-w-7xl px-4"><PhotoGallery compact /></div>
 
       <section className="px-4 py-16 md:py-20">
         <motion.div

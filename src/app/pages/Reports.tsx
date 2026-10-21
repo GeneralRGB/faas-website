@@ -1,3 +1,4 @@
+import { PhotoGallery } from "../components/PhotoGallery";
 import { motion } from "motion/react";
 import {
   Calendar,
@@ -79,6 +80,7 @@ export function Reports() {
                 <div className="h-56 overflow-hidden bg-gray-100 sm:h-64 md:h-full">
                   <ImageWithFallback
                     src={report.image}
+                    loading="lazy" decoding="async"
                     alt={report.title}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -165,6 +167,8 @@ export function Reports() {
             </article>
           ))}
         </div>
+
+        <PhotoGallery />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
