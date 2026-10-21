@@ -14,12 +14,17 @@ type Report = {
   title: string;
   date: string;
   location: string;
-  image: string;
+  image?: string;
   resultsAvailable?: boolean;
   resultsUrl?: string;
   photosUrl?: string;
   broadcastUrl?: string;
 };
+
+const artisticChampionshipImage = new URL(
+  "../../assets/sn-artistic-championship.webp",
+  import.meta.url,
+).href;
 
 const summerFestImage = new URL(
   "../../assets/summer-fest-2026.jpg",
@@ -33,6 +38,13 @@ const federationFinalImage = new URL(
 
 export function Reports() {
   const reports: Report[] = [
+    {
+      id: 3,
+      title: "SN Artistic Championship",
+      date: "17 октября 2026 года",
+      location: "Москва, Россия",
+      image: artisticChampionshipImage,
+    },
     {
       id: 1,
       title: "Летний фестиваль в парке Измайлово",
@@ -78,12 +90,12 @@ export function Reports() {
             >
               <div className="grid grid-cols-1 md:h-full md:grid-cols-[0.75fr_1fr]">
                 <div className="h-56 overflow-hidden bg-gray-100 sm:h-64 md:h-full">
-                  <ImageWithFallback
+                  {report.image ? <ImageWithFallback
                     src={report.image}
                     loading="lazy" decoding="async"
                     alt={report.title}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
+                  /> : <div className="flex h-full flex-col items-center justify-center gap-4 bg-gradient-to-br from-blue-50 to-purple-50 p-6 text-center text-blue-700"><Calendar size={36} aria-hidden="true" /><span className="text-lg font-semibold">{report.title}</span></div>}
                 </div>
 
                 <div className="flex flex-col justify-start p-6 sm:p-7 lg:p-8">

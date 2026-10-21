@@ -63,15 +63,6 @@ type CalendarEvent = {
 export function Calendar() {
   const events: CalendarEvent[] = [
     {
-      id: 1,
-      date: "17 октября 2026",
-      city: "Москва",
-      title: "SN Artistic Championship",
-      status: "registration-closed",
-      tags: ["Арт"],
-
-    },
-    {
       id: 2,
       date: "5–6 декабря 2026",
       city: "Москва / Реутов",
