@@ -30,9 +30,9 @@ export function PhotoGallery({ compact = false }: { compact?: boolean }) {
     <section ref={section} id="gallery" className="scroll-mt-28 py-16 md:py-20" aria-labelledby="gallery-title">
       <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
         <div className="max-w-2xl">
-          <p className="mb-2 font-semibold text-blue-700">В объективе — спортсмены</p>
+          <p className="mb-2 font-semibold text-blue-700">Спортсмены, команды и награды</p>
           <h2 id="gallery-title" className="mb-4 text-3xl font-bold text-gray-950 md:text-4xl">Моменты соревнований</h2>
-          <p className="text-lg text-gray-600">Пилонный спорт, воздушное кольцо и полотна — выступления на сцене FAAS.</p>
+          <p className="text-lg text-gray-600">К нам приезжают большие команды. Построения, выступления и награждения — моменты соревнований FAAS.</p>
         </div>
         {compact && <Link to="/reports#gallery" className="inline-flex items-center gap-2 font-semibold text-blue-700">Все фотографии <ArrowRight size={18} /></Link>}
       </div>

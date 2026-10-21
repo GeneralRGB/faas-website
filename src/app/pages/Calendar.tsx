@@ -182,7 +182,7 @@ export function Calendar() {
                       sizes="(min-width: 1024px) 260px, (min-width: 768px) 220px, 100vw"
                       loading="lazy" decoding="async"
                       alt={event.imageAlt || event.title}
-                      className="h-full w-full object-contain"
+                      className="h-full w-full object-cover"
                     /> : <div className="flex h-full min-h-52 flex-col items-center justify-center gap-4 bg-gradient-to-br from-blue-50 to-purple-50 p-6 text-center text-blue-700"><CalendarIcon size={36} aria-hidden="true" /><span className="text-lg font-semibold">{event.title}</span></div>}
                   </div>
 

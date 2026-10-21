@@ -123,7 +123,7 @@ export function Home() {
                 sizes="(min-width: 768px) 260px, 100vw"
                 loading="lazy" decoding="async"
                 alt="Афиша SN Sport & Art, 5–6 декабря 2026, Москва / Реутов"
-                className="max-h-96 w-full bg-gray-950 object-contain md:h-full"
+                className="h-64 w-full object-cover md:h-full"
               />
               <div className="flex flex-col gap-6 p-6 md:flex-row md:items-center md:justify-between md:p-8">
                 <div>
