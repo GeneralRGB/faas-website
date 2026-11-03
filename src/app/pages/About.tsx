@@ -22,9 +22,6 @@ const nordanceStudioLogo = new URL(
   import.meta.url,
 ).href;
 
-const energyLogo = new URL("../../assets/energy-logo.jpg", import.meta.url)
-  .href;
-
 export function About() {
   const values = [
     {
@@ -71,7 +68,6 @@ export function About() {
   const partners = [
     { name: "Smart Pole", logo: smartPoleLogo },
     { name: "Nordance Studio", logo: nordanceStudioLogo },
-    { name: "Energy", logo: energyLogo },
   ];
 
   return (
@@ -199,7 +195,7 @@ export function About() {
               Мы гордимся сотрудничеством с ведущими студиями и организациями,
               разделяющими нашу приверженность к превосходству
             </p>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               {partners.map((partner, index) => (
                 <motion.div
                   key={partner.name}
