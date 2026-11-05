@@ -44,6 +44,7 @@ export function Reports() {
       date: "17 октября 2026 года",
       location: "Москва, Россия",
       image: artisticChampionshipImage,
+      photosUrl: "https://dimaber.ru/disk/sn-artistic-2026",
     },
     {
       id: 1,

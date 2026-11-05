@@ -31,4 +31,4 @@
 
 ## Обложка SN Artistic Championship
 
-`src/assets/sn-artistic-championship.webp` подготовлена из `/Users/aleksandr/Downloads/s-blob-v1-IMAGE-yUE5ZtqUC_c.jpeg`. Используется для SN Artistic Championship от 17 октября 2026, Москва, по указанию заказчика. Оригинал не изменён.
+`src/assets/sn-artistic-championship.webp` обновлена из `/Users/aleksandr/Downloads/sn-art-0064_resized.jpg`. Используется для SN Artistic Championship от 17 октября 2026, Москва, по указанию заказчика. WebP подготовлен без обрезки, с учётом EXIF-ориентации, размером 1280 × 960 пикселей и качеством 82. Оригинал не изменён.
