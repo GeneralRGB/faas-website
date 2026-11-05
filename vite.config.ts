@@ -16,9 +16,9 @@ function figmaAssetResolver() {
   }
 }
 
-export default defineConfig(({ command }) => ({
-  // GitHub Pages serves project sites from /<repository>/.
-  base: command === 'build' ? '/faas-website/' : '/',
+export default defineConfig(() => ({
+  // The custom domain serves the site from the root.
+  base: '/',
   plugins: [
     figmaAssetResolver(),
     // The React and Tailwind plugins are both required for Make, even if
