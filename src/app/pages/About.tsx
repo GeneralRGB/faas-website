@@ -94,18 +94,18 @@ export function About() {
               <h2 className="mb-8 text-center text-4xl font-bold text-gray-900">
                 Наша миссия
               </h2>
-              <p className="mb-6 text-lg leading-relaxed text-gray-700">
+              <p className="mb-6 text-justify text-lg leading-relaxed text-gray-700">
                 Федерация FAAS развивает соревнования по пилонному спорту и
                 воздушной гимнастике. Мы формируем единые правила проведения
                 соревнований, разрядные программы и понятную систему оценки
                 результатов.
               </p>
-              <p className="mb-6 text-lg leading-relaxed text-gray-700">
+              <p className="mb-6 text-justify text-lg leading-relaxed text-gray-700">
                 Федерация объединяет спортсменов, тренеров, судей и
                 организаторов, помогает повышать квалификацию и расти в
                 спортивном и артистическом направлениях.
               </p>
-              <p className="text-lg leading-relaxed text-gray-700">
+              <p className="text-justify text-lg leading-relaxed text-gray-700">
                 Наша задача — создавать безопасные и прозрачные условия для
                 соревнований и развития профессионального сообщества.
               </p>
