@@ -142,7 +142,7 @@ export function Home() {
                 </div>
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
                   <span className="rounded-full bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-600">
-                    Идёт регистрация
+                    Регистрация завершена
                   </span>
                   <Link
                     to="/calendar"
