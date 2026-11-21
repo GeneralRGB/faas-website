@@ -270,18 +270,21 @@ export function About() {
               </h2>
             </div>
             <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <Mail className="text-blue-600 flex-shrink-0 mt-1" size={20} />
-                <div>
-                  <p className="font-semibold mb-1 text-gray-900">Почта</p>
-                  <a
-                    href="mailto:FVSM-FAAS@yandex.ru"
-                    className="text-gray-700 hover:text-blue-600 transition-colors"
-                  >
-                    FVSM-FAAS@yandex.ru
-                  </a>
+              {[
+                { email: "FVSM-FAAS@yandex.ru", purpose: "Общие вопросы, сотрудничество и коммерческие предложения" },
+                { email: "Sn.team2022@gmail.com", purpose: "Соревнования и оплата взносов" },
+                { email: "snfestsummer2024@gmail.com", purpose: "Приём документов" },
+                { email: "sn.music2025@yandex.ru", purpose: "Приём музыки" },
+              ].map(({ email, purpose }) => (
+                <div key={email}>
+                  <div className="min-w-0">
+                    <p className="font-semibold mb-1 text-gray-900">{purpose}</p>
+                    <a href={`mailto:${email}`} className="break-all text-gray-700 transition-colors hover:text-blue-600">
+                      {email}
+                    </a>
+                  </div>
                 </div>
-              </div>
+              ))}
               <div className="border-t border-gray-200 pt-4">
                 <p className="mb-3 font-semibold text-gray-900">
                   Социальные сети
