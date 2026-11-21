@@ -105,10 +105,27 @@ export function Participation() {
                 </span>
               </AccordionTrigger>
               <AccordionContent className="pb-7">
-                <div className="border-t border-gray-100 pt-5">
-                  <div className="rounded-2xl bg-gray-50 px-5 py-8 text-center text-gray-500">
-                    Приказы пока не добавлены
-                  </div>
+                <div className="space-y-3 border-t border-gray-100 pt-5">
+                  <a
+                    href="https://disk.yandex.ru/d/xBco4Q0LB3cM6g"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex items-center gap-4 rounded-2xl bg-gray-50 px-5 py-4 text-gray-800 transition-colors hover:bg-blue-50 hover:text-blue-700"
+                  >
+                    <FileText size={21} className="shrink-0 text-blue-600" />
+                    <span className="font-medium">О присвоении квалификационных категорий</span>
+                    <ExternalLink size={18} className="ml-auto shrink-0 text-gray-400 transition-colors group-hover:text-blue-600" />
+                  </a>
+                  <a
+                    href="https://disk.yandex.ru/d/u310MJWMGKAJhg"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex items-center gap-4 rounded-2xl bg-gray-50 px-5 py-4 text-gray-800 transition-colors hover:bg-blue-50 hover:text-blue-700"
+                  >
+                    <FileText size={21} className="shrink-0 text-blue-600" />
+                    <span className="font-medium">О присвоении спортивных разрядов</span>
+                    <ExternalLink size={18} className="ml-auto shrink-0 text-gray-400 transition-colors group-hover:text-blue-600" />
+                  </a>
                 </div>
               </AccordionContent>
             </AccordionItem>
